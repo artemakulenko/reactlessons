@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
+
+@import './styles/abstracts/variables';
+
+
+@import './styles/base/reset';
+@import './styles/base/typography';
+
+
+@import './styles/components/buttons';
+
+
+
+
+
+#root{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

@@ -1,0 +1,28 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.price {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #101820;
+  letter-spacing: .1rem;
+  font-weight: 700;
+  .symbol{
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    margin-left: 5px;
+    font-weight: 600;
+  }
+}
+
+.description {
+  color: #9FA3A6;
+}
+
+.date{
+  margin-top: 10px;
+}

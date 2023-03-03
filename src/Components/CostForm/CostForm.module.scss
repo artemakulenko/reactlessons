@@ -1,0 +1,27 @@
+@import '../../styles/abstracts/variables';
+
+.form{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  // flex-direction: column;
+  gap: 30px;
+  align-items: end;
+}
+
+.formGroup{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form input{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid darken($bg, 10%);
+}
+
+.buttonWrapper{
+  display: flex;
+  gap: 15px;
+}
