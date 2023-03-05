@@ -3,28 +3,46 @@ import styles from './CostForm.module.scss'
 
 const CostForm = (props) => {
 
-  const [userInput, setUserInput] = useState({
-    name: '',
-    amount: '',
-    date: ''
-  })
+  const [inputName, setInputName] = useState('')
+  const [inputAmount, setInputAmount] = useState('')
+  const [inputDate, setInputDate] = useState('')
 
-  const nameChangeHandler = (e) => setUserInput({ ...userInput, name: e.target.value})
-  const amountChangeHandler = (e) => setUserInput({...userInput, amount: e.target.value})
-  const dateChangeHandler = (e) => setUserInput({...userInput, date: e.target.value})
+  
 
+  const nameChangeHandler = (e) => setInputName(e.target.value)
+  const amountChangeHandler = (e) => setInputAmount(e.target.value)
+  const dateChangeHandler = (e) => setInputDate(e.target.value)
+
+  const sumbitForm = (e) => {
+    e.preventDefault()
+    const data = {
+      name: inputName,
+      amount: inputAmount,
+      date: new Date(inputDate)
+    }
+
+
+    console.log(data)
+    setInputName('')
+    setInputAmount('')
+    setInputDate('')
+
+  }
 
 
 
   return(
     <>
-      <div> name: {userInput.name} </div>
-      <div> amount: {userInput.amount} </div>
-      <div> date: {userInput.date} </div>
-      <form className={styles.form}  >
+      <div> name: {inputName} </div>
+      <div> amount: {inputAmount} </div>
+      <div> date: {inputDate} </div>
+
+
+      <form className={styles.form} onSubmit={sumbitForm} >
+
         <div className={styles.formGroup}>
           <label htmlFor="text">Название</label>
-          <input type="text" placeholder='Название' onChange={nameChangeHandler}/>
+          <input type="text" placeholder='Название' onChange={nameChangeHandler} value={inputName}/>
         </div>
 
         <div className={styles.formGroup}>
@@ -35,12 +53,13 @@ const CostForm = (props) => {
             min={0.01} 
             step={0.01} 
             onChange={amountChangeHandler}
+            value={inputAmount}
             />
         </div>
 
         <div className={styles.formGroup}>
           <label htmlFor="">Сумма</label>
-          <input type="date" placeholder='' min='2019-01-01' max='2022-12-31' onChange={dateChangeHandler}/>
+          <input type="date" placeholder='' min='2019-01-01' max='2019-12-31' onChange={dateChangeHandler} value={inputDate}/>
         </div>
 
         <div className={styles.buttonWrapper}>
