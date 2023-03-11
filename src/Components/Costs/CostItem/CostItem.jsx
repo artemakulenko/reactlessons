@@ -1,22 +1,11 @@
 import { CostDate } from '../CostDate/CostDate'
 import { Card } from '../../UI/Card'
-
 import styles from './CostItem.module.scss'
-
-import { useState } from 'react'
-
 
 
 const CostItem = (props) => {
-  const [desc, setDesc] = useState(props.description)
-
-  const clickFuncHandler = () => {
-    setDesc('dsdsd')
-  }
-
-
+  
   return(
-
     <Card className={styles.item}>
 
       <div className={styles.price}>
@@ -24,16 +13,13 @@ const CostItem = (props) => {
       </div>
 
       <div className={styles.description}>
-        {desc}
+        {props.name}
       </div>
 
       <div className={styles.date}>
         <CostDate date={props.date}/>
       </div>
 
-      <div>
-        <button onClick={clickFuncHandler}>Click me</button>
-      </div>
     </Card>
   )
 }

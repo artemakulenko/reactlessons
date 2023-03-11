@@ -21,8 +21,7 @@ const CostForm = (props) => {
       date: new Date(inputDate)
     }
 
-
-    console.log(data)
+    props.onSaveCostData(data)
     setInputName('')
     setInputAmount('')
     setInputDate('')
@@ -42,7 +41,12 @@ const CostForm = (props) => {
 
         <div className={styles.formGroup}>
           <label htmlFor="text">Название</label>
-          <input type="text" placeholder='Название' onChange={nameChangeHandler} value={inputName}/>
+          <input 
+            type="text" 
+            placeholder='Название' 
+            onChange={nameChangeHandler} 
+            value={inputName}
+            />
         </div>
 
         <div className={styles.formGroup}>
@@ -59,7 +63,14 @@ const CostForm = (props) => {
 
         <div className={styles.formGroup}>
           <label htmlFor="">Сумма</label>
-          <input type="date" placeholder='' min='2019-01-01' max='2019-12-31' onChange={dateChangeHandler} value={inputDate}/>
+          <input 
+            type="date" 
+            placeholder='' 
+            min='2019-01-01' 
+            max='2019-12-31' 
+            onChange={dateChangeHandler} 
+            value={inputDate}
+            />
         </div>
 
         <div className={styles.buttonWrapper}>

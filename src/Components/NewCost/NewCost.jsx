@@ -5,11 +5,20 @@ import { CostForm } from '../CostForm'
 
 const NewCost = (props) => {
   
+  const costSaveDataHandler = (inputCostData) => {
+
+    const costData = {
+      ...inputCostData,
+      id: Math.random().toString()
+    }
+
+    props.onAddCost(costData)
+  }
 
   return(
     <Container>
       <Card>
-        <CostForm />
+        <CostForm onSaveCostData={costSaveDataHandler}/>
       </Card>
     </Container>
   )
